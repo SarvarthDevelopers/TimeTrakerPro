@@ -26,6 +26,20 @@ import { PrismaClient } from '@prisma/client';
 
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit, OnModuleDestroy {
+  private _project: any;
+    private _timeOffType: any;
+  public get timeOffType(): any {
+    return this._timeOffType;
+  }
+  public set timeOffType(value: any) {
+    this._timeOffType = value;
+  }
+  public get project(): any {
+    return this._project;
+  }
+  public set project(value: any) {
+    this._project = value;
+  }
   async onModuleInit() {
     await this.$connect();
   }

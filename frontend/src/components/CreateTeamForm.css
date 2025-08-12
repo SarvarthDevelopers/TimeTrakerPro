@@ -1,0 +1,100 @@
+
+body {
+  height: 100vh;
+  /* background: linear-gradient(135deg, #4facfe 0%, #9a55ff 100%); */
+
+background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+background: linear-gradient(135deg, #c2e9fb 0%, #a1c4fd 100%);
+
+
+}
+/* Container */
+.team-form {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* Title */
+.form-title {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Label */
+.form-label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  font-weight: 500;
+  color: #34495e;
+}
+
+/* Input */
+.form-input,
+.form-textarea {
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+/* Textarea */
+.form-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Checkbox */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+.form-checkbox {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Button */
+.submit-btn {
+  background: #3498db;
+  /* background: linear-gradient(45deg, #6a82fb, #fc5c7d); */
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+  background: #2980b9;
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}

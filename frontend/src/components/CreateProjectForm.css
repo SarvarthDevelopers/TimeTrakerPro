@@ -1,0 +1,499 @@
+/* --- Variables for a sophisticated, modern design system --- */
+:root {
+  /* Primary Colors (Teal/Cyan inspired) */
+  --primary-50: #E0F7FA;
+  --primary-100: #B2EBF2;
+  --primary-200: #80DEEA;
+  --primary-300: #4DD0E1;
+  --primary-400: #26C6DA;
+  --primary-500: #00BCD4; /* Main primary color */
+  --primary-600: #00ACC1;
+  --primary-700: #0097A7;
+  --primary-800: #00838F;
+  --primary-900: #006064;
+
+  /* Accent Colors (Soft Orange/Amber for highlights/warnings) */
+  --accent-50: #FFF8E1;
+  --accent-100: #FFECB3;
+  --accent-200: #FFE082;
+  --accent-300: #FFD54F;
+  --accent-400: #FFCA28;
+  --accent-500: #FFC107; /* Main accent color */
+  --accent-600: #FFB300;
+  --accent-700: #FFA000;
+  --accent-800: #FF8F00;
+  --accent-900: #FF6F00;
+
+  /* Neutral Colors (Grayscale for text, backgrounds, borders) */
+  --neutral-50: #F8F9FA; /* Lightest background */
+  --neutral-100: #E9ECEF;
+  --neutral-200: #DEE2E6; /* Light borders */
+  --neutral-300: #CED4DA;
+  --neutral-400: #ADB5BD; /* Placeholder text, secondary borders */
+  --neutral-500: #6C757D; /* Secondary text */
+  --neutral-600: #495057;
+  --neutral-700: #343A40; /* Main text color */
+  --neutral-800: #212529;
+  --neutral-900: #1A1D20; /* Darkest text/elements */
+
+  /* Semantic Colors */
+  --success-color: #28A745; /* Green */
+  --success-hover-color: #218838;
+  --danger-color: #DC3545; /* Red */
+  --danger-hover-color: #C82333;
+  --info-color: #17A2B8; /* Cyan */
+  --info-hover-color: #138496;
+  --warning-color: #FFC107; /* Yellow/Orange */
+  --warning-hover-color: #E0A800;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.2);
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  /* Transitions */
+  --transition-ease: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Base Styles --- */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--neutral-50);
+  color: var(--neutral-700);
+  line-height: 1.6;
+  margin: 0;
+  padding: 1.5rem; /* Reduced padding */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Main Container --- */
+.container {
+  max-width: 960px; /* Slightly smaller max-width */
+  margin: 2.5rem auto; /* Reduced margin */
+  padding: 2rem 3rem; /* Reduced padding */
+  background-color: var(--neutral-100);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--neutral-200);
+  overflow: hidden; /* Ensures shadows/borders are contained */
+}
+
+/* --- Headings --- */
+h1, h2, h3 {
+  color: var(--neutral-800);
+  margin-bottom: 1.25rem; /* Reduced margin */
+  font-weight: 700;
+  letter-spacing: -0.02em; /* Subtle tightening for modern look */
+}
+
+h1 {
+  font-size: 2.5rem; /* Slightly smaller font size */
+  text-align: center;
+  color: var(--primary-700);
+  margin-bottom: 2.5rem; /* Reduced margin */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 3rem; /* Reduced margin */
+  border-bottom: 2px solid var(--neutral-300);
+  padding-bottom: 0.8rem; /* Reduced padding */
+  color: var(--neutral-700);
+}
+
+h3 {
+  font-size: 1.5rem; /* Slightly smaller font size */
+  color: var(--neutral-700);
+}
+
+/* --- Form Styles --- */
+.create-project-form, .edit-project-form {
+  display: grid;
+  gap: 1.25rem; /* Reduced gap */
+  margin-bottom: 2.5rem; /* Reduced margin */
+  padding: 1.75rem; /* Reduced padding */
+  background-color: var(--card-background-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--neutral-200);
+}
+
+.form-input, .form-textarea {
+  width: 90%;
+  padding: 0.9rem 1.1rem; /* Reduced padding */
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  color: var(--neutral-700);
+  background-color: var(--neutral-50);
+  transition: var(--transition-ease);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.06); /* Subtle inner shadow */
+}
+
+.form-input::placeholder, .form-textarea::placeholder {
+  color: var(--neutral-500);
+  opacity: 0.8;
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 4px var(--primary-100), inset 0 1px 2px rgba(0,0,0,0.06);
+  background-color: white;
+}
+
+.form-textarea {
+  min-height: 100px; /* Slightly smaller min-height */
+  resize: vertical;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem; /* Reduced gap */
+  font-size: 0.95rem; /* Slightly smaller font size */
+  color: var(--neutral-600); /* Adjusted color for better visibility */
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.form-label input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1.3rem; /* Slightly smaller size */
+  height: 1.3rem; /* Slightly smaller size */
+  border: 2px solid var(--neutral-400); /* Default border color */
+  border-radius: var(--radius-sm);
+  background-color: var(--neutral-100); /* Slightly darker background for contrast */
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  transition: var(--transition-ease);
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.form-label input[type="checkbox"]::before {
+  content: "";
+  width: 0.7rem; /* Adjusted checkmark size */
+  height: 0.7rem; /* Adjusted checkmark size */
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--primary-600); /* Primary color for checkmark */
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 60%);
+}
+
+.form-label input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.form-label input[type="checkbox"]:checked {
+  border-color: var(--primary-500);
+  background-color: var(--primary-50);
+}
+
+.form-label input[type="checkbox"]:focus {
+  outline: 2px solid var(--primary-300);
+  outline-offset: 2px;
+}
+
+/* --- Buttons --- */
+.btn {
+  padding: 0.8rem 1.75rem; /* Reduced padding */
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem; /* Slightly smaller font size */
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-ease);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Reduced gap */
+  box-shadow: var(--shadow-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em; /* Slightly tighter letter spacing */
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+  background-color: var(--primary-600);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-700);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-hover-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--neutral-500);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: var(--neutral-600);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: var(--success-hover-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-cancel {
+  background-color: var(--neutral-400);
+  color: var(--neutral-800);
+}
+
+.btn-cancel:hover {
+  background-color: var(--neutral-500);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Divider --- */
+.divider {
+  border: 0;
+  height: 2px;
+  background-color: var(--neutral-200);
+  margin: 3rem 0; /* Reduced margin */
+  border-radius: 1px;
+}
+
+/* --- Project List --- */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly smaller minmax */
+  gap: 1.5rem; /* Reduced gap */
+}
+
+.project-card {
+  border: 1px solid var(--neutral-200);
+  padding: 1.75rem; /* Reduced padding */
+  border-radius: var(--radius-lg);
+  background-color: var(--card-background-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-ease);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card:hover {
+  transform: translateY(-4px); /* Reduced lift */
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-200);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.7rem; /* Reduced margin */
+  color: var(--primary-600);
+  font-size: 1.3rem; /* Slightly smaller font size */
+}
+
+.project-card p {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem; /* Slightly smaller font size */
+  color: var(--neutral-600);
+}
+
+.project-card p strong {
+  color: var(--neutral-700);
+  font-weight: 600;
+}
+
+.project-card .actions {
+  margin-top: 1.5rem; /* Reduced margin */
+  display: flex;
+  gap: 0.7rem; /* Reduced gap */
+  justify-content: flex-end;
+}
+
+.no-projects-message {
+  text-align: center;
+  padding: 2.5rem; /* Reduced padding */
+  font-style: italic;
+  color: var(--neutral-500);
+  font-size: 1rem; /* Slightly smaller font size */
+  background-color: var(--neutral-100);
+  border-radius: var(--radius-md);
+  margin-top: 1.5rem; /* Reduced margin */
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Update Popup (Modal) --- */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.3s ease-out forwards;
+  overflow-y: auto;
+  padding: 15px; /* Reduced padding */
+}
+
+.popup-content {
+  background-color: var(--card-background-color);
+  padding: 2.5rem; /* Reduced padding */
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  z-index: 1001;
+  width: 90%;
+  max-width: 550px; /* Slightly smaller max-width */
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  border: 1px solid var(--neutral-200);
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-content h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem; /* Reduced margin */
+  text-align: center;
+  color: var(--primary-700);
+  font-size: 1.8rem; /* Slightly smaller font size */
+}
+
+.popup-content .edit-project-form {
+  flex-grow: 1;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  display: grid;
+  gap: 1.25rem; /* Reduced gap */
+}
+
+/* Specific styling for labels within the popup for better visibility */
+.popup-content .form-label {
+  color: white; /* Changed to white for better contrast */
+  margin-bottom: 0; /* Reset margin-bottom as gap handles spacing */
+}
+
+.popup-content .button-group {
+  margin-top: 2rem; /* Reduced margin */
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97); /* Reduced translateY and scale */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .container {
+    margin: 1.5rem;
+    padding: 1.5rem 2rem;
+  }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.7rem; }
+  h3 { font-size: 1.3rem; }
+  .project-list {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Adjusted minmax */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 1rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+  h2 { font-size: 1.5rem; margin-top: 2rem; }
+  .create-project-form, .edit-project-form {
+    padding: 1.25rem;
+  }
+  .project-card .actions {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .btn {
+    width: 100%;
+  }
+  .popup-content {
+    padding: 1.5rem;
+    max-height: 95vh;
+  }
+  .popup-content .button-group {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.8rem 1rem;
+    margin: 0.8rem;
+  }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.2rem; }
+  .form-input, .form-textarea, .btn {
+    font-size: 0.85rem;
+    padding: 0.7rem 0.9rem;
+  }
+  .form-label { font-size: 0.85rem; }
+  .project-card { padding: 1.25rem; }
+  .project-card h3 { font-size: 1.1rem; }
+  .project-card p { font-size: 0.85rem; }
+  .popup-content { padding: 1.25rem; }
+}

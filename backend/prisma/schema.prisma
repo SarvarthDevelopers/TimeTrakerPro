@@ -32,3 +32,28 @@ model Statuses {
   createdAt  DateTime @default(now())
   @@map("STATUSES") // this maps it to your capital table
 }
+model Project {
+  id           String   @id @default(uuid()) @map("ID")
+  name         String   @map("NAME")
+  description  String?  @map("DESCRIPTION")
+  clientName   String?  @map("CLIENT_NAME")
+  budgetHours  Int?     @map("BUDGET_HOURS")
+  isBillable   Boolean  @default(true) @map("IS_BILLABLE")
+  isArchived   Boolean  @default(false) @map("IS_ARCHIVED")
+  startDate    DateTime? @map("START_DATE")
+  endDate      DateTime? @map("END_DATE")
+  createdAt    DateTime @default(now()) @map("CREATED_AT")
+  updatedAt    DateTime @updatedAt @map("UPDATED_AT")
+
+  @@map("PROJECTS")
+}
+model TimeOffType {
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid @map("ID")
+  name       String   @unique @db.VarChar(50) @map("NAME")
+  isPaid     Boolean  @default(true) @map("IS_PAID")
+  description String? @db.Text @map("DESCRIPTION")
+  createdAt  DateTime @default(now()) @map("CREATED_AT")
+  updatedAt  DateTime @default(now()) @map("UPDATED_AT")
+
+  @@map("TIME_OFF_TYPES")
+}
